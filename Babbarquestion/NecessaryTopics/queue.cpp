@@ -1,0 +1,17 @@
+#include<iostream>
+#include<queue>
+using namespace std;
+int main(){
+// first wala first output
+queue<string> q;
+    q.push("Rahul");
+    q.push("Kumar");
+    q.push("Saini");
+        cout<<"size before pop size "<<q.size()<<endl;
+
+    cout<<"first element "<<q.front()<<endl;
+    q.pop();
+    cout<<"first element "<<q.front()<<endl;
+
+    cout<<"size after pop "<<q.size()<<endl;
+}
