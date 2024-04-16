@@ -1,68 +1,41 @@
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
+ using namespace std;
 
-int main() {
-    int n;
-    cout<<"Enter the size of the Array ";
-    cin >> n;
-int arr[100], b;
-for(int i=0;i<n;i++){
-    cin >> arr[i];
+struct Node
+{
+    int data;
+    Node *left;
+    Node *right;
+};
+Node *newNode(int value)
+{
+    Node *node = new Node;
+    node->data = value;
+    node->left = node->right = NULL;
+    return node;
 }
-while(b !=3){ // choice
-    cout<<" Enter 1 for inserting "<<endl;
-     cout<<" Enter 2 for Deleting "<<endl;
-      cout<<" Enter 3 for Exit "<<endl;
-      cin >> b;
-      switch(b){
-
-      case 1:
-     int c;
-     cout<<"Enter the inserting elements which you want "<<endl;
-     cin >> c;
-     arr[n] = c;
-     n++;
-
-     cout<<"Array After inserting ";
-     for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-     }
-     cout<<endl;
-      break;
-
-      case 2:
-      cout<<"Enter the number to be deleted "<<endl;
-      cin >> c;
-      for(int i=0;i<n;i++){
-        if(c == arr[i]){
-            for(int j=0;j<n;j++){
-                arr[j] = arr[j+1];
-            }
-            n--;
-              cout << "Array after deletion" << endl;
-                        for (int i = 0; i < n; i++) {
-                            cout << arr[i] << " ";
-                        }
-            break;
-        }else if(i == n){
-            cout<<"elements not found !!";
-        }
-      }
-      n--;
-      break;
-
-
-
-     case 3:
-     break;
-
-
-      default:
-      cout<<"Invalid Choice ";
-
-
-      }
+void inOrder(Node *root)
+{
+    if (root == NULL)
+        return;
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right);
 }
+
+int main()
+{
+    Node *root = newNode(50);
+    root->left = newNode(30);
+    root->right = newNode(70);
+    root->left->left = newNode(20);
+    root->left->right = newNode(40);
+    root->right->left = newNode(60);
+    root->right->right = newNode(80);
+
+    cout << "In order traversal of the binary search tree is: \n";
+    inOrder(root);
+    cout << "\n";
 
     return 0;
 }

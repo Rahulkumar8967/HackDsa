@@ -8,10 +8,11 @@ int n;
 cout<<"Enter the Size of the Array"<<endl;
 cin >> n;
 int a[100], b; 
-for(int i=0;i<n;i++){
+for(int i=0;i<n;i++){  // a is given to input the array
     cin >> a[i] ;
 }
-while( b != 3){
+
+while( b != 3){  // b is given to choice
   cout << "Enter your choice" << endl << "Choose 1 for insertion" << endl
              << "Choose 2 for deletion " << endl << "Choose 3 to exit " << endl;
 cin >> b;  // choice of option
