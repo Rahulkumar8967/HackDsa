@@ -78,15 +78,15 @@ int main(){
 
     
     cout << "Inorder traversal is :";
-    Inorder(root);
+   // Inorder(root);
     cout << endl;
 
     cout << "Preorder traversal is :";
-    Preorder(root);
+  //  Preorder(root);
     cout << endl;
 
     cout << "Postorder traversal is :";
-    Postorder(root);
+  //  Postorder(root);
     cout << endl;
 
     return 0;
