@@ -14,30 +14,34 @@ void selection_sort(int arr[], int n)
                 mini = j;
             }
         }
-        int temp = arr[mini];
-        arr[mini] = arr[i];
-        arr[i] = temp;
+
+        swap(arr[i], arr[mini]);
+        //    int temp = arr[mini];
+        //   arr[mini] = arr[i];
+        //  arr[i] = temp;
     }
 
-    cout << "After selection sort: "
-         << "\n";
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    cout << "\n";
+   
 }
 int main()
 {
     int arr[] = {13, 46, 24, 52, 20, 9};
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << "Before selection sort: "
-         << "\n";
+    cout << "Before selection sort: " << endl;
+
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
-    cout << "\n";
+    cout << endl;
+
     selection_sort(arr, n);
+
+    cout << "After selection sort: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
     return 0;
 }
