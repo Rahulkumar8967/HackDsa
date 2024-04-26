@@ -31,6 +31,7 @@ int main()
     root->right = new Node(3);
 
     root->left->right = new Node(5);
+    root->right->left = new Node(6);
 
     cout << "Preorder traversal of the binary tree: ";
     Preorder(root);
