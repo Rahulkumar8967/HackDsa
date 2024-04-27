@@ -28,17 +28,21 @@ public:
     void InsertAtEnd(int data)
     {
         Node *newNode = new Node(data);
+
+        // for empty Linklist
         if (head == NULL)
         {
             head = newNode;
             newNode->next = head;
             return;
         }
+        // traversing  at the end of the linklist 
         Node *tail = head;
         while (tail->next != head)
         {
             tail = tail->next;
         }
+        // inserting element at the end
         tail->next = newNode;
         newNode->next = head;
     }
@@ -59,11 +63,6 @@ public:
 
     void display()
     {
-        if (head == nullptr)
-        {
-            cout << "List is empty!" << endl;
-            return;
-        }
 
         Node *temp = head;
         do

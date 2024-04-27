@@ -6,19 +6,19 @@ class Node
 public:
     int data;
     Node *next;
-    Node *back;
+   
 
-    Node(int data1, Node *next1, Node *back1)
+    Node(int data1, Node *next1)
     {
         data = data1;
         next = next1;
-        back = back1;
+       
     }
     Node(int data1)
     {
         data = data1;
         next = nullptr;
-        back = nullptr;
+       
     }
 };
 
@@ -74,7 +74,8 @@ void printLL(Node *head)
 
 int main()
 {
-    Node *head = nullptr;
+    
+     Node *head = nullptr;
     int choice = 0;
     while (choice != 4)
     {
@@ -89,14 +90,15 @@ int main()
         {
         case 1:
         {
-            int n, data;
+            int number, data;
             cout << "Enter the number of values to be inserted at the front: ";
-            cin >> n;
-            for (int i = 0; i < n; ++i)
+            cin >> number;
+            for (int i = 0; i < number; ++i)
             {
                 cout << "Enter the value to be inserted: ";
                 cin >> data;
                 InsertAtFront(head, data);
+               
             }
             break;
         }
