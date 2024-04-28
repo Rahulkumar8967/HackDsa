@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // again practice
+// Queue using linklist
 class QNode
 {
 public:

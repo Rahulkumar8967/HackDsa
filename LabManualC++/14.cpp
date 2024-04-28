@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Doubly Linklist
 class Node
 {
 public:
     int data;
     Node *next;
     Node *back;
+
     Node(int data1, Node *next1, Node *back1)
     {
         data = data1;
@@ -22,7 +23,7 @@ public:
     }
 };
 
-Node *DeleteFront(Node *head)
+Node *DeleteFront(Node *&head)
 {
     if (head == nullptr || head->next == nullptr)
     {
@@ -36,63 +37,68 @@ Node *DeleteFront(Node *head)
     return head;
 }
 
-Node *InsertFront(Node *head, int val)
+Node *InsertFront(Node *&head, int val)
 {
     Node *newnode = new Node(val, head, nullptr);
     if (head != nullptr)
     {
         head->back = newnode;
+        newnode->next = head;
+       
     }
-    return newnode;
+    head = newnode; 
+    return head;   
 }
-void printLL(Node* head){
+
+void printLL(Node *head)
+{
     Node *temp = head;
-    while(head != NULL){
+    while (temp != nullptr)
+    {
         cout << temp->data << " ";
         temp = temp->next;
     }
     cout << endl;
 }
 
-    int
-    main()
+int main()
 {
     Node *head = nullptr;
     int n, data, choice = 0;
-    while (choice != 3)
+    while (choice != 4)
     {
-        cout << "1. for inserting the elements in front of linklist" << endl;
-        cout << "2. for Deleting the elements in front of linklist" << endl;
-        cout << "3. for display the linklist" << endl;
-        cout << "4. for Exit the Program !!!" << endl;
-        
-        cout << "Enter the choice you want" << endl;
+        cout << "1. for inserting elements at the beginning of the linked list" << endl;
+        cout << "2. for deleting elements from the beginning of the linked list" << endl;
+        cout << "3. for displaying the linked list" << endl;
+        cout << "4. for exiting the program" << endl;
+        cout << "Enter the choice you want: ";
         cin >> choice;
 
         switch (choice)
         {
         case 1:
-            cout << "Enter the no. of value to be inserted At Begining of Linklist" << endl;
+            cout << "Enter the number of values to be inserted at the beginning of the linked list: ";
             cin >> n;
             for (int i = 0; i < n; ++i)
             {
-                cout << "Enter the value to be inserted" << endl;
+                cout << "Enter the value to be inserted: ";
                 cin >> data;
-                head = InsertFront(head, data);
+                InsertFront(head, data);
             }
             break;
 
         case 2:
-            cout << "Deleting the Linklist" << endl;
-            head = DeleteFront(head);
+            cout << "Deleting from the beginning of the linked list" << endl;
+            DeleteFront(head);
             break;
 
-
         case 3:
-           printLL(head);
-           break;
+            cout << "Displaying the linked list: ";
+            printLL(head);
+            break;
+
         case 4:
-            cout << "Exit from the Program" << endl;
+            cout << "Exiting the program" << endl;
             break;
 
         default:

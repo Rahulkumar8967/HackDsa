@@ -22,7 +22,7 @@ public:
     }
 };
 
-void InsertAtFront(Node *&head, int data)
+Node* InsertAtFront(Node *&head, int data)
 {
     Node *newNode = new Node(data);
 
@@ -30,7 +30,7 @@ void InsertAtFront(Node *&head, int data)
     {
         head = newNode;
         newNode->next = head;
-        return;
+        return head;
     }
     Node *tail = head;
     while (tail->next != head)
@@ -44,7 +44,7 @@ void InsertAtFront(Node *&head, int data)
 
 Node *DeleteAtFront(Node *&head)
 {
-    if (head == nullptr)
+    if (head == nullptr )
     {
         return nullptr;
     }

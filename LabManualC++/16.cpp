@@ -67,16 +67,6 @@ void printLL(Node *head)
     cout << endl;
 }
 
-void deleteLinkedList(Node *head)
-{
-    Node *temp;
-    while (head != nullptr)
-    {
-        temp = head;
-        head = head->next;
-        delete temp;
-    }
-}
 
 int main()
 {
